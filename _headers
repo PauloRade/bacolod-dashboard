@@ -1,0 +1,18 @@
+# Apply COOP, COEP, and CORS security headers to ALL files (required for Unity Multithreading)
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Access-Control-Allow-Origin: *
+
+# Explicitly handle Brotli compressed Unity build files
+/Build/*.wasm.br
+  Content-Type: application/wasm
+  Content-Encoding: br
+
+/Build/*.data.br
+  Content-Type: application/octet-stream
+  Content-Encoding: br
+
+/Build/*.js.br
+  Content-Type: application/javascript
+  Content-Encoding: br
